@@ -1,25 +1,15 @@
-from langchain.embeddings.openai import OpenAIEmbeddings
+
 from pinecone import Pinecone, ServerlessSpec
 import getpass
 import os
-
-
-
-from langchain_openai import OpenAIEmbeddings
-
-from langchain_pinecone import PineconeVectorStore
-
-from langchain_openai.embeddings import OpenAIEmbeddings
-
-# from langchain_openai import ChatOpenAI
-
-
-
-from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from pinecone import Pinecone, ServerlessSpec
+from langchain_pinecone import PineconeVectorStore
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import OpenAIEmbeddings
 
-from langchain_community.document_loaders import PyPDFLoader
+OPENAI_API_KEY = getpass.getpass("OPENAPI_KEY")
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 PINECONE_API_KEY = getpass.getpass("PINEAPI_KEY")
 os.environ['PINECONE_API_KEY'] = PINECONE_API_KEY
